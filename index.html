@@ -1,0 +1,235 @@
+MH LEGAL WEBSITE (NEXT.JS PROJECT)
+
+===============================
+1. package.json
+===============================
+{
+  "name": "mh-legal-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.0",
+    "react": "18.3.0",
+    "react-dom": "18.3.0"
+  }
+}
+
+===============================
+2. app/layout.js
+===============================
+import "../styles/globals.css";
+
+export const metadata = {
+  title: "MH LEGAL",
+  description: "Corporate Insurance Brokerage"
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
+===============================
+3. app/page.js
+===============================
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Services from "../components/Services";
+import Team from "../components/Team";
+import ApplyForm from "../components/ApplyForm";
+
+export default function Home() {
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <About />
+      <Services />
+      <Team />
+      <ApplyForm />
+    </main>
+  );
+}
+
+===============================
+4. components/Navbar.js
+===============================
+export default function Navbar() {
+  return (
+    <nav className="navbar">
+      <h2>MH LEGAL</h2>
+      <div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#apply">Apply</a>
+      </div>
+    </nav>
+  );
+}
+
+===============================
+5. components/Hero.js
+===============================
+export default function Hero() {
+  return (
+    <section className="hero">
+      <h1>MH LEGAL</h1>
+      <p>Corporate Insurance Brokerage & Nationwide Field Agent Network</p>
+      <a href="#apply" className="btn">Apply Now</a>
+    </section>
+  );
+}
+
+===============================
+6. components/About.js
+===============================
+export default function About() {
+  return (
+    <section id="about" className="section">
+      <h2>About Us</h2>
+      <p>
+        MH LEGAL is a corporate insurance brokerage partnering with leading insurers
+        to expand market reach and sales performance. We manage over 100 trained
+        field agents nationwide.
+      </p>
+    </section>
+  );
+}
+
+===============================
+7. components/Services.js
+===============================
+export default function Services() {
+  return (
+    <section id="services" className="section dark">
+      <h2>What We Do</h2>
+      <ul>
+        <li>Insurance Sales Distribution</li>
+        <li>Agent Training & Development</li>
+        <li>Compliance & Field Operations</li>
+        <li>Corporate Partnerships</li>
+      </ul>
+    </section>
+  );
+}
+
+===============================
+8. components/Team.js
+===============================
+export default function Team() {
+  const managers = [
+    "Operations Manager",
+    "Sales Director",
+    "Training Coordinator"
+  ];
+
+  return (
+    <section id="team" className="section">
+      <h2>Our Team</h2>
+      <ul>
+        {managers.map((m, i) => (
+          <li key={i}>{m}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+===============================
+9. components/ApplyForm.js
+===============================
+export default function ApplyForm() {
+  return (
+    <section id="apply" className="section dark">
+      <h2>Apply to Join MH LEGAL</h2>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert("Application submitted!");
+        }}
+      >
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+  );
+}
+
+===============================
+10. styles/globals.css
+===============================
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #111827;
+}
+
+.navbar a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #1e3a8a, #0f172a);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.dark {
+  background: #111827;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
