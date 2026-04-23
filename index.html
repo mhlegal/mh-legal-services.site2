@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MH LEGAL</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      background: #111827;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #1f2937;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .hero {
+      padding: 90px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    }
+
+    .hero h1 {
+      font-size: 44px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #60a5fa;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      padding: 12px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111827;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>MH LEGAL</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#apply">Apply</a>
+</nav>
+
+<div class="hero">
+  <h1>Corporate Insurance Brokerage</h1>
+  <p>
+    MH LEGAL partners with leading insurers to drive market reach and sales performance across South Africa through a nationwide network of trained field agents.
+  </p>
+</div>
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="card">
+    <p>
+      MH LEGAL manages over 100 professionally trained field agents operating nationwide under the MH LEGAL brand.
+    </p>
+    <p>
+      Through our partnership with Mthashana TVET College, we provide structured in-service training and career development opportunities.
+    </p>
+  </div>
+</section>
+
+<section id="services">
+  <h2>What We Do</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Insurance Brokerage</h3>
+      <p>We connect clients with leading insurers to deliver strong market performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Field Agent Network</h3>
+      <p>100+ trained agents operating under MH LEGAL across the country.</p>
+    </div>
+
+    <div class="card">
+      <h3>Training & Development</h3>
+      <p>Structured training through Mthashana TVET College partnership.</p>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <h2>Apply for Opportunities</h2>
+
+  <!-- Replace YOUR_EMAIL with Formspree endpoint -->
+  <form action="https://formspree.io/f/YOUR_EMAIL" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <input type="text" name="phone" placeholder="Phone Number" required />
+    <textarea name="message" rows="5" placeholder="Why do you want to join MH LEGAL?" required></textarea>
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<a class="whatsapp"
+   href="https://wa.me/27700000000"
+   target="_blank">
+   WhatsApp Us
+</a>
+
+<footer>
+  © 2026 MH LEGAL. All Rights Reserved.
+</footer>
+
+</body>
+  </html>
